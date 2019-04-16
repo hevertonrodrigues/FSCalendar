@@ -114,7 +114,7 @@
                                            );
             _subtitleLabel.frame = CGRectMake(
                                               self.preferredSubtitleOffset.x,
-                                              self.fs_height-subtitleHeight,
+                                              self.fs_height-subtitleHeight+self.preferredSubtitleOffset.y,
                                               self.contentView.fs_width,
                                               subtitleHeight
                                               );
@@ -148,7 +148,7 @@
         
         _eventIndicator.frame = CGRectMake(
                                            self.preferredEventOffset.x,
-                                           _titleLabel.fs_bottom+_titleLabel.fs_height,
+                                           _titleLabel.fs_bottom+_titleLabel.fs_height+self.preferredEventOffset.y,
                                            self.fs_width,
                                            eventSize*0.83
                                            );
