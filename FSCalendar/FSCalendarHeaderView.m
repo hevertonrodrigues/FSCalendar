@@ -211,7 +211,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.numberOfLines = 0;
         [self.contentView addSubview:titleLabel];
@@ -230,7 +230,11 @@
 {
     [super layoutSubviews];
     
-    self.titleLabel.frame = self.contentView.bounds;
+//    self.titleLabel.frame = self.contentView.bounds;
+    self.titleLabel.frame = CGRectMake(16,
+                                       self.contentView.bounds.origin.y,
+                                       self.contentView.bounds.size.width - 32,
+                                       self.contentView.bounds.size.height);
     
     if (self.header.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
         CGFloat position = [self.contentView convertPoint:CGPointMake(CGRectGetMidX(self.contentView.bounds), CGRectGetMidY(self.contentView.bounds)) toView:self.header].x;
